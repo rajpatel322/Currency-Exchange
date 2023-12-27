@@ -5,7 +5,7 @@ const button = document.querySelector("button");
 const from = document.querySelectorAll(".dropdown select")[0];
 const to = document.querySelectorAll(".dropdown select")[1];
 const msg = document.querySelector(".msg") // get the .msg element
-
+const body = document.querySelector("body");
 
 window.addEventListener("load", () => {
     convert();
@@ -58,10 +58,13 @@ async function convert(){
     let rate = data[to.value.toLowerCase()];
     let finalAmount = amountVal * rate;
     msg.innerText = `${amountVal} ${from.value} = ${finalAmount} ${to.value}`;
+    
 }
 
 button.addEventListener("click", evt => {
     evt.preventDefault();
+    body.classList.add("animation");
+
     convert();
 });
 

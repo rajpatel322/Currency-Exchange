@@ -6,11 +6,33 @@
 body{
     display: flex;
     flex-direction: column;
-    
+
     justify-content: space-between;
     align-items: center;
     height: 100vh;
     background-color:#7DCD85;
+    
+
+}
+
+
+.animation{
+    animation-name: backgroundColor;
+    animation-duration: 5s;
+    animation-timing-function:linear;
+    animation-iteration-count: infinite;
+}
+
+@keyframes backgroundColor{
+    0% {background-color:#7DCD85;
+        
+    }
+    50% {
+        background: green;
+    }
+    100%{
+        background-color:#7DCD85;
+    }
 }
 
 .container{
