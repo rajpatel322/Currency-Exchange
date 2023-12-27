@@ -5,13 +5,15 @@
 
 body{
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
     align-items: center;
     height: 100vh;
     background-color:#7DCD85;
 }
 
 .container{
+    margin-top: 25vh;
     background-color: #C2E1C2;
     padding: 2rem;
     border-radius: 1rem;
