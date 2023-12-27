@@ -25,10 +25,10 @@ for(let select of dropdown) {
         let newOption = document.createElement("option"); // create a option element
         newOption.innerText = code; // set the inner text to code
         newOption.value = code; 
-        if(select.name == "from" && code == "USD"){
+        if(select.name === "from" && code === "USD"){
             newOption.selected = "selected";
         }
-        if(select.name == "to" && code == "INR"){
+        if(select.name === "to" && code === "INR"){
             newOption.selected = "selected";
         }
         select.append(newOption);
@@ -46,7 +46,7 @@ async function convert(){
     
     let amount = document.querySelector(".amount input"); // get the input element inside the .amount class element
     let amountVal = amount.value;
-    if(amountVal == "" || amountVal < 0) {
+    if(amountVal === "" || amountVal < 0) {
         amountVal = 1;
         amount.value = "1";
     }
