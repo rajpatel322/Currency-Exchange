@@ -1,3 +1,5 @@
+import { countryList } from "./code.js";
+
 const base_url = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
 
 const dropdown = document.querySelectorAll(".dropdown select"); // get select element inside the dropdown class element

@@ -1,4 +1,4 @@
-const countryList = {  //object which contain curreny and country initials
+export const countryList = {  //object which contain curreny and country initials
     AED: "AE",
     AFN: "AF",
     XCD: "AG",
