@@ -22,6 +22,13 @@ function updateFlag(element) {
 
 }
 
+function changeHandler(evt){
+    console.log(evt);
+    console.log(evt.target);
+
+    updateFlag(evt.target);
+}
+
 for(let select of dropdown) {
     for (let code in countryList){ // code = key
         let newOption = document.createElement("option"); // create a option element
@@ -35,12 +42,7 @@ for(let select of dropdown) {
         }
         select.append(newOption);
     }
-    select.addEventListener("change", (evt) => {
-        console.log(evt);
-        console.log(evt.target);
-
-        updateFlag(evt.target)
-    } )
+    select.addEventListener("change", changeHandler)
 
 }
 
