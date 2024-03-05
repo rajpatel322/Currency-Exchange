@@ -1,6 +1,6 @@
 import { countryList } from "./code.js";
 
-const base_url = "https://cdn.jsdelivr.net/gh/fawazahmed0/currency-api@1/latest/currencies";
+const base_url = "https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies";
 
 const dropdown = document.querySelectorAll(".dropdown select"); // get select element inside the dropdown class element
 const button = document.querySelector("button");
@@ -55,11 +55,13 @@ async function convert(){
         amount.value = "1";
     }
 
-    const URL = `${base_url}/${from.value.toLowerCase()}/${to.value.toLowerCase()}.json`;
+    const URL = `${base_url}/${from.value.toLowerCase()}.json`;
     let response = await fetch(URL);
     console.log(response);
     let data = await response.json();
-    let rate = data[to.value.toLowerCase()];
+    console.log(data);
+
+    let rate = data[from.value.toLowerCase()][to.value.toLowerCase()];
     let finalAmount = amountVal * rate;
     msg.innerText = `${amountVal} ${from.value} = ${finalAmount} ${to.value}`;
     
